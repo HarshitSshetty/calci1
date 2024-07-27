@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>Calci App by Harshit</title>
+
+
+		<style>
+			* { font-size: 55px;}
+			body { background-color : linen; }
+			h1,h2 { background-color : white;  color : black ; width : 50% ; border-radius : 30px; }
+		</style>
+	</head>
+
+
+	<body>	
+		<center>
+		<h1>Calci App</h1>
+
+		<form onsubmit="show()">
+			<input type = "number" step = "any" placeholder="enter your number one" id="num1"/>
+			<br/><br/>
+			<input type = "number" step = "any" placeholder="enter your number two " id="num2"/>
+			<br/><br/>
+
+			<input type = "submit" value = "Add"/>
+			<input type = "submit" value = "Sub"/>
+			<input type = "submit" value = "Mul"/>
+
+			
+		</form>
+
+		
+
+		<h2 id="msg" />
+
+			<script>
+				function show()
+				{
+					event.preventDefault();
+					let num1 = document.getElementById("num1");
+					let num2 = document.getElementById("num2");
+					let msg = document.getElementById("msg");
+					
+						if(num1.value==="")	
+						{
+							alert("Please enter number one");
+							msg.innerHTML = "";
+							name1.focus();
+							return;
+						}
+						if(num2.value==="")	
+						{
+							alert("Please enter number two");
+							msg.innerHTML = "";
+							name2.focus();
+							return;
+						}
+					let n1 = parseFloat(num1.value);
+					let n2 = parseFloat(num2.value);
+					let action = document.activeElement.value;
+					
+					if(action==="Add")
+					{
+						let r = n1 + n2;
+						let ans = "addition = "+ r.toFixed(2);
+						msg.innerHTML = ans;
+					}
+					else if(action==="Sub")
+					{
+						let r = n1 - n2;
+						let ans = "Subtraction = "+ r.toFixed(2);
+						msg.innerHTML = ans;
+					}
+					else if(action==="Mul")
+					{
+						let r = n1 * n2;
+						let ans = "Mul = "+ r.toFixed(2);
+						msg.innerHTML = ans;
+					}
+				}
+
+
+
+
+			</script>
+	
+		</center>
+	</body>
+
+
+</html>
